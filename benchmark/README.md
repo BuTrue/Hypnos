@@ -7,6 +7,7 @@
 | `results/benchmark_master.json` | full metadata (per-fold std, params, source) |
 | `results/resources.md` | parameters, size, memory, latency, training and 24 h inference time |
 | `results/hmm_comparison.md` | raw vs HMM postprocessing, all models |
+| `results/significance.md` | paired bootstrap of Hypnos vs SleepGPT |
 | `results/cv5_10ep_eval.md` | Hypnos 10EP raw/HMM variants |
 | `results/cv5_30ep_eval.md` | Hypnos 30EP pilot raw/HMM variants |
 | `results/epi9_eval.md` | Hypnos EPI9 raw/HMM variants |

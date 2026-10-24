@@ -83,6 +83,7 @@ python -m hypnos.infer --onnx models/LAB-CV5-CORE-30EP.onnx --img cache/16.npz
 
 - Protocol and full table: [`docs/BENCHMARK.md`](docs/BENCHMARK.md)
 - Machine-readable results: [`benchmark/results/`](benchmark/results)
+- Statistical significance (paired bootstrap): [`benchmark/results/significance.md`](benchmark/results/significance.md)
 - External model sources, licenses and port notes:
   [`docs/EXTERNAL_MODELS.md`](docs/EXTERNAL_MODELS.md)
 - Reproduction/figure code: [`benchmark/code/`](benchmark/code)

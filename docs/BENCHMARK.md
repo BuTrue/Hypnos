@@ -68,7 +68,10 @@
   lightweight U-Sleep port is an exception: it is fast but weak on REM.
 - **Variance is large.** Legacy Hypnos cross-fold REM std is 0.09; the CV5-E9
   row is 0.14. A 0.01 difference between adjacent rows is not meaningful with
-  31 recordings.
+  31 recordings. Paired bootstrap over recordings confirms this:
+  V446 vs SleepGPT REM +0.0124, 95% CI [-0.0586, +0.0777], P = 0.65;
+  CV5 10EP vs SleepGPT -0.0428, 95% CI [-0.1072, +0.0233], P = 0.099.
+  See [`results/significance.md`](../benchmark/results/significance.md).
 
 ## HMM postprocessing
 
