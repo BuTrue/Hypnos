@@ -130,6 +130,7 @@ The public code is a minimal, dependency-light version of the pipeline.
 pip install -r requirements.txt
 
 # train 5 folds on cached features
+# use --drop-boundary 1 to reproduce the deployed core-training recipe
 python -m hypnos.train --data cache --folds folds.json --out runs \
     --epochs 10 --epi 22 --drop-boundary 0
 

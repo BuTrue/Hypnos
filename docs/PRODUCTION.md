@@ -109,7 +109,7 @@ The app runs a mixture z-score with per-recording self-calibration. The public
 `hypnos.infer` wrapper uses the training-time global per-recording z-score. The
 PyTorch definition in `hypnos/models.py` and the released ONNX file were
 verified to agree: maximum probability difference 2.9e-6 and identical argmax
-on 128 epochs of a held-out recording (same preprocessing).
+on 128 epochs of a cached recording (same preprocessing).
 
 ## Usage
 

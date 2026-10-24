@@ -7,9 +7,10 @@
   [`METHODS.md`](METHODS.md)).
 - **Epoch**: 5 s scoring. Native DB3 annotations are 10 s rows; the 5 s label is
   the repeated 10 s label. No epoch from a test mouse is ever trained on.
-- **Training**: every model is trained from scratch on the training folds with
-  the same labels. External models are faithful PyTorch ports written for this
-  benchmark; see [`EXTERNAL_MODELS.md`](EXTERNAL_MODELS.md).
+- **Training**: every model is trained on the training folds with the same
+  labels; the LGBM-G2 variant uses a human-pretrained YASA feature trunk.
+  External neural models are faithful PyTorch ports written for this benchmark;
+  see [`EXTERNAL_MODELS.md`](EXTERNAL_MODELS.md).
 - **Scoring**: raw argmax at 5 s, **no HMM, no prior bias, no transition
   smoothing**. F1 is computed per recording, averaged over recordings, then over
   the five folds. `std R` is the population standard deviation of the five

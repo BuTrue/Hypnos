@@ -9,8 +9,9 @@ published sleep-staging baselines, and the deployed ONNX model.
 
 Protocol: 31 private HYX recordings / 16 mouse groups, mouse-disjoint 5-fold
 cross-validation, 5 s epochs, raw argmax (no HMM or prior bias). All models
-were trained from scratch on the same folds and labels. External models are
-faithful PyTorch ports, not the authors' original code.
+were trained on the same folds and labels (the LGBM-G2 variant uses a
+human-pretrained YASA feature trunk). External neural models are faithful
+PyTorch ports, not the authors' original code.
 
 | model | family | REM F1 | Wake F1 | NREM F1 | mean F1 | sum F1 |
 |---|---|---|---|---|---|---|
