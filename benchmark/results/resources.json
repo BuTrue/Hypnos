@@ -1,0 +1,11 @@
+{
+  "model": "CV5DELIV30",
+  "params": 88607,
+  "pth_mb": 0.373,
+  "cpu_ms_b1": 4.327,
+  "cpu_rss_mb": 0.0,
+  "gpu_ms_b1": 5.014,
+  "gpu_peak_mb": 10.033,
+  "onnx_cpu_ms_b1": 1.116,
+  "onnx_mb": 0.389
+}
