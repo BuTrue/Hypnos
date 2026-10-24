@@ -2,7 +2,7 @@
 
 Hypnos is a lightweight single-model classifier for mouse EEG/EMG sleep
 staging (REM / Wake / NREM). This repository contains the architecture, the
-training and decoding method, a reproducible 5-fold benchmark against nine
+training and decoding method, a documented 5-fold benchmark against nine
 published sleep-staging baselines, and the deployed ONNX model.
 
 ## Headline results
