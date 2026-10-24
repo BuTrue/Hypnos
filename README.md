@@ -19,10 +19,19 @@ PyTorch ports, not the authors' original code.
 | **Hypnos-V448 (legacy)** | project CNN, 45 s context | 0.7047 | 0.9344 | 0.9277 | 0.8556 | 2.5668 |
 | SleepGPT | time–frequency Transformer | 0.6994 | 0.9224 | 0.9110 | 0.8443 | 2.5328 |
 | SleepTransformer | two-level Transformer | 0.6940 | 0.9193 | 0.9116 | 0.8416 | 2.5249 |
-| **Hypnos-v446fusion (CV5)** | project CNN + band-ratio, 110 s | 0.6535 | 0.9203 | 0.9106 | 0.8281 | 2.4843 |
+| **Hypnos-v446fusion (CV5, 10EP)** | project CNN + band-ratio, 110 s | 0.6535 | 0.9203 | 0.9106 | 0.8281 | 2.4843 |
+| **Hypnos-v446fusion (CV5-E9, 10EP)** | project CNN + band-ratio, 45 s | 0.6246 | 0.9285 | 0.9174 | 0.8235 | 2.4705 |
+| **Hypnos-v446fusion (CV5-30EP, pilot)** | project CNN + band-ratio, 110 s | 0.6276 | 0.9093 | 0.8836 | 0.8068 | 2.4205 |
 | DeepSleepNet | CNN + BiLSTM | 0.5993 | 0.8852 | 0.8420 | 0.7755 | 2.3264 |
 
-Full 12-model table (AccuSleep, AttnSleep, LGBM, U-Sleep, TinySleepNet, …):
+> The **CV5-30EP** row follows the deployed 30-epoch cosine schedule but stops
+> within the first 10 epochs (the deployment checkpoint is epoch 7); it is a
+> pilot, not a full 30-epoch 5-fold run. It does not beat the 10-epoch model.
+> With HMM postprocessing the modern Hypnos rows gain +0.03 to +0.05 REM, but
+> the ranking does not change: see
+> [`benchmark/results/hmm_comparison.md`](benchmark/results/hmm_comparison.md).
+
+Full 14-model table (AccuSleep, AttnSleep, LGBM, U-Sleep, TinySleepNet, …):
 [`benchmark/results/benchmark_master.md`](benchmark/results/benchmark_master.md).
 Resource comparison (parameters, size, latency, memory, training time, 24 h
 inference): [`benchmark/results/resources.md`](benchmark/results/resources.md).
@@ -44,6 +53,10 @@ inference): [`benchmark/results/resources.md`](benchmark/results/resources.md).
   / **0.7395** (10 s core); full 5-fold OOF REM F1 **0.7231** (10 s core).
   See [`docs/PRODUCTION.md`](docs/PRODUCTION.md). The model is trained on all
   31 recordings, so in-sample numbers are not used for comparison.
+- **30-epoch 5-fold pilot:** raw REM 0.6276 / HMM+prior 0.6568, below the
+  10-epoch model (raw 0.6535 / HMM 0.6822). The deployed checkpoint (epoch 7)
+  is good on its held-out fold, but the 30-epoch recipe is not better in full
+  cross-validation.
 
 ## Method in one page
 

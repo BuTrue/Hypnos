@@ -2,10 +2,14 @@
 
 | path | content |
 |---|---|
-| `results/benchmark_master.md` | human-readable main table (12 models) |
+| `results/benchmark_master.md` | human-readable main table (14 models) |
 | `results/benchmark_master.csv` | machine-readable main table |
 | `results/benchmark_master.json` | full metadata (per-fold std, params, source) |
 | `results/resources.md` | parameters, size, memory, latency, training and 24 h inference time |
+| `results/hmm_comparison.md` | raw vs HMM postprocessing, all models |
+| `results/cv5_10ep_eval.md` | Hypnos 10EP raw/HMM variants |
+| `results/cv5_30ep_eval.md` | Hypnos 30EP pilot raw/HMM variants |
+| `results/epi9_eval.md` | Hypnos EPI9 raw/HMM variants |
 | `results/per_fold.csv` | Hypnos CV5 per-fold REM/Wake/NREM and training time |
 | `figures/f1_by_class.png` | per-class F1 for every model |
 | `figures/benchmark_summary.png` | sum F1, speed vs size, training cost, static memory |

@@ -10,6 +10,8 @@ Latency is batch=1 on one 5 s context window; Hypnos uses ONNX Runtime CPU (1.12
 | SleepGPT | 1670371 | 6.72 | 6.681 | — | — | 38.0 | 73.4 |
 | SleepTransformer | 3353139 | 13.43 | 13.413 | — | — | 32.54 | 70.4 |
 | Hypnos-v446fusion (CV5, OOF) | 88607 | 0.373 | 0.354 | 1.12 | 10.0 | 18.12 | 19.3 |
+| Hypnos-v446fusion (CV5-E9, OOF) | 59903 | 0.24 | 0.24 | — | — | 31.17 | — |
+| Hypnos-v446fusion (CV5-30EP, OOF) | 88607 | 0.373 | 0.354 | 1.12 | 10.0 | 30.36 | 19.3 |
 | DeepSleepNet | 7628547 | 30.55 | 30.514 | — | — | 90.08 | 161.0 |
 | LGBM-G2 (YASA transfer) | — | 14.51 | — | — | — | 0.15 | — |
 | AccuSleep | 14835 | 0.07 | 0.059 | — | — | 8.87 | 6.3 |

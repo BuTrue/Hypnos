@@ -1,0 +1,34 @@
+{
+  "name": "Hypnos-v446fusion (CV5-30EP, OOF)",
+  "family": "project CNN + band-ratio",
+  "input": "spectrogram 5s",
+  "context": "22",
+  "n_folds": 5,
+  "R": 0.6275885714285714,
+  "W": 0.9092861904761905,
+  "N": 0.8835809523809525,
+  "mean": 0.8068185714285715,
+  "sum": 2.420455714285714,
+  "std_R": 0.0938025691693273,
+  "params": 88607,
+  "size_mb": 0.373,
+  "param_mem_mb": 0.354,
+  "train_min_fold": 30.36,
+  "infer_s": 19.3,
+  "source": "5-fold OOF, 30-epoch cosine, best epoch <=10, raw argmax",
+  "group": "G1",
+  "fold_R": [
+    0.6551,
+    0.7709,
+    0.4817,
+    0.6386,
+    0.5916
+  ],
+  "best_epochs": [
+    4,
+    1,
+    2,
+    4,
+    4
+  ]
+}

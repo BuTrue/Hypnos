@@ -48,8 +48,26 @@ postprocessed):
 | 10 s full | 0.6828 | 0.9232 | 0.9126 | 0.8395 | 2.5186 |
 | 10 s core | 0.7231 | 0.9744 | 0.9748 | 0.8908 | 2.6723 |
 
-Use the fold-0 number as the realistic single-fold estimate and the OOF number
-as the cross-mouse estimate.
+### 5-fold estimate of the 30-epoch recipe (pilot)
+
+The deployed recipe uses a 30-epoch cosine schedule. A full 30-epoch × 5-fold
+run takes >10 h under current GPU load, so we ran the first 10 epochs of that
+schedule (patience 3; the deployment checkpoint is epoch 7):
+
+| variant | REM | mean | sum | core REM |
+|---|---|---|---|---|
+| raw 5 s argmax | 0.6276 | 0.8068 | 2.4205 | 0.6607 |
+| HMM λ=0.5 + 4.5 % prior | 0.6568 | 0.8166 | 2.4498 | 0.6865 |
+
+This pilot is **lower** than the 10-epoch model (raw 0.6535, HMM 0.6822). The
+30-epoch schedule does not improve cross-mouse generalisation in this test; the
+deployed model's strong in-sample numbers come from training on all 31
+recordings, not from the longer schedule. Fold-2 is the main failure case
+(raw REM 0.4817, best epoch 2).
+
+Use the fold-0 number as the realistic single-fold estimate and the 10-epoch
+OOF number as the cross-mouse estimate. Treat the 30-epoch pilot as a lower
+bound / negative result, not as a claim of improvement.
 
 ## In-sample checks (for reference only)
 

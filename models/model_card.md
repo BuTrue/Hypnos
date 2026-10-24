@@ -27,6 +27,13 @@ model (10 epochs) never saw its test groups.
 | fold-0 held-out, 30 ep | 10 s core | 0.7395 | 0.9765 | 0.9668 | 0.8943 | 2.6828 |
 | 5-fold OOF, 10 ep | 10 s full | 0.6828 | 0.9232 | 0.9126 | 0.8395 | 2.5186 |
 | 5-fold OOF, 10 ep | 10 s core | 0.7231 | 0.9744 | 0.9748 | 0.8908 | 2.6723 |
+| 30-epoch pilot, raw 5 s | 5 s full | 0.6276 | 0.9093 | 0.8836 | 0.8068 | 2.4205 |
+| 30-epoch pilot, HMM+prior | 10 s full | 0.6568 | 0.9094 | 0.8836 | 0.8166 | 2.4498 |
+
+The 30-epoch pilot follows the deployed cosine schedule but stops within the
+first 10 epochs (deployment checkpoint epoch 7). It does not beat the 10-epoch
+model; fold 2 is the failure case (raw REM 0.4817). Treat it as a negative
+result, not as an improvement.
 
 For reference, fold-0 full-label metrics are 0.6968 / 0.9204 / 0.9010 at 5 s
 (mean 0.8394, sum 2.5181) and 0.7118 / 0.9221 / 0.9017 at 10 s (mean 0.8452,
